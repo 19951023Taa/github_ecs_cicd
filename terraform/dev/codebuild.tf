@@ -94,7 +94,16 @@ resource "aws_iam_policy" "CodeBuild_policy" {
         "Resource" : [
           "arn:aws:codebuild:ap-northeast-1:${data.aws_caller_identity.this.account_id}:report-group/terraform-ecscicd-dev-build_project-*"
         ]
-      }
+      },
+    {
+      "Sid": "AmazonECRPublicGalleryPull",
+      "Effect": "Allow",
+      "Action": [
+        "ecr-public:GetAuthorizationToken",
+        "sts:GetServiceBearerToken"
+      ],
+      "Resource": "*"
+    }
     ]
   })
 }

@@ -226,7 +226,7 @@ resource "aws_codepipeline" "example_pipeline" {
       output_artifacts = ["SourceArtifact"]
 
       configuration = {
-        ConnectionArn        = "arn:aws:codeconnections:ap-northeast-1:550733172573:connection/5f44c37c-7ca0-4fe5-af59-39647f3b0620" # GitHub接続のARN
+        ConnectionArn        = "arn:xxxxxx" # GitHub接続のARN
         FullRepositoryId     = "19951023Taa/cicd_test"                                                                               # GitHubリポジトリのフルパス
         BranchName           = "main"                                                                                                # ブランチ名をGitHubのものに合わせる
         OutputArtifactFormat = "CODE_ZIP"

@@ -1,5 +1,5 @@
-FROM python:3.9-slim
-#ECRのイメージを使うとレートリミット起きない
+FROM public.ecr.aws/docker/library/python:3.9-slim
+#ECR Public Galleryからイメージを取得
 
 WORKDIR /app
 COPY ./app.py /app

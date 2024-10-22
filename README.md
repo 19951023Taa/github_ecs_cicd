@@ -1,3 +1,6 @@
+リポジドリはGithub、Dockerイメージの取得元はECR Public Galleryに設定    
+※アプリの業務用端末にECR Public Galleryのアクセス権限を追加必要かも    
+
 初期構築手順    
 1.S3バケットを手動で作成    
 2.tfbackendファイルのバケット名を作成したバケット名に変更する    
@@ -19,7 +22,7 @@ terraform plan -var-file=_prod.tfvars
 ※ECSのサービス起動前にECRを作成してDockerイメージをpushする    
 ※デプロイが動くたびにLBに紐づけているターゲットグループが変更されるのでTerraformで差分として検知する    
 
-ECS周り構築手順 ※ECS、CICD関連をapply→ECRにイメージをpush→残りをapplyでも可能    
+ECS周り構築手順 ※ECS、CICD関連をコメントアウトしてapply→ECRにイメージをpush→残りをapplyでも可能    
 1.VPC    
 2.サブネット、NAT    
 3.ルートテーブル、ルートテーブルアタッチ    

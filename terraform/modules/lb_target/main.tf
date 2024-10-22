@@ -6,6 +6,12 @@ resource "aws_lb_listener" "this" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.this.arn
   }
+
+  lifecycle {
+    ignore_changes = [
+      default_action[0].target_group_arn
+    ]
+  }
 }
 
 resource "aws_lb_target_group" "this" {
